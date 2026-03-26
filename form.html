@@ -9,7 +9,7 @@
     <meta property="og:title" content="Get 3 Free Verified Airbnb Addresses">
     <meta property="og:description" content="Try PitchKey free. Get 3 verified property addresses within 24 hours.">
     <meta property="og:type" content="website">
-    <link rel="canonical" href="https://pitchkey.ai/pitchkey_free_trial_form.html">
+    <link rel="canonical" href="https://pitchkey.ai/form.html">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
@@ -272,14 +272,13 @@
 </head>
 <body>
     <div class="container">
-        <!-- LEFT: FORM -->
         <div class="form-section">
             <h1>Get 3 Free Verified Addresses</h1>
             <p>Tell us exactly what you're looking for. We'll find 3 verified properties and send them to you within 24 hours. No credit card needed.</p>
 
             <div class="error-message" id="errorMessage"></div>
 
-            <form id="trialForm" onsubmit="handleSubmit(event)">
+            <form id="trialForm" action="https://formspree.io/f/xzdkzrda" method="POST">
                 <div class="form-row">
                     <div class="form-group">
                         <label for="firstName">First Name</label>
@@ -355,7 +354,7 @@
                         </div>
                     </div>
                     <div class="other-input" id="otherRegionInput">
-                        <input type="text" id="otherRegionText" name="otherRegionText" placeholder="Enter region">
+                        <input type="text" id="otherRegionText" name="otherRegion" placeholder="Enter region">
                     </div>
                 </div>
 
@@ -454,7 +453,6 @@
             </form>
         </div>
 
-        <!-- RIGHT: BENEFITS -->
         <div class="benefits-section">
             <div class="benefits-title">What You'll Get</div>
 
@@ -511,66 +509,12 @@
             }
         }
 
-        function handleSubmit(event) {
-            event.preventDefault();
-
-            const selectedRegions = Array.from(document.querySelectorAll('input[name="regions"]:checked'))
-                .map(cb => cb.value)
-                .join(', ');
-            
-            const otherRegionText = document.getElementById('otherRegionText').value;
-            const regionsToSend = otherRegionText ? selectedRegions.replace('Other', otherRegionText) : selectedRegions;
-
-            const selectedBedrooms = Array.from(document.querySelectorAll('input[name="bedrooms"]:checked'))
-                .map(cb => cb.value)
-                .join(', ');
-
-            const selectedPrices = Array.from(document.querySelectorAll('input[name="pricePoint"]:checked'))
-                .map(cb => cb.value)
-                .join(', ');
-
-            const formData = {
-                firstName: document.getElementById('firstName').value,
-                lastName: document.getElementById('lastName').value,
-                email: document.getElementById('email').value,
-                phone: document.getElementById('phone').value,
-                company: document.getElementById('company').value,
-                regions: regionsToSend || 'Not specified',
-                propertyType: document.getElementById('propertyType').value,
-                bedrooms: selectedBedrooms || 'Not specified',
-                pricePoint: selectedPrices || 'Not specified',
-                timeline: document.getElementById('timeline').value,
-                notes: document.getElementById('notes').value,
-                submittedAt: new Date().toLocaleString()
-            };
-
-            fetch('https://formspree.io/f/YOUR_FORM_ID', {
-                method: 'POST',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(formData)
-            })
-            .then(response => {
-                if (response.ok) {
-                    document.getElementById('trialForm').reset();
-                    document.getElementById('successMessage').classList.add('show');
-                    document.getElementById('errorMessage').classList.remove('show');
-                    document.getElementById('otherRegionInput').classList.remove('show');
-                    
-                    setTimeout(() => {
-                        document.getElementById('successMessage').classList.remove('show');
-                    }, 10000);
-                } else {
-                    throw new Error('Form submission failed');
-                }
-            })
-            .catch(error => {
-                document.getElementById('errorMessage').textContent = 'Something went wrong. Please try again or email sam@pitchkey.ai';
-                document.getElementById('errorMessage').classList.add('show');
-            });
-        }
+        document.getElementById('trialForm').addEventListener('submit', function(e) {
+            document.getElementById('successMessage').classList.add('show');
+            setTimeout(() => {
+                document.getElementById('successMessage').classList.remove('show');
+            }, 10000);
+        });
     </script>
 </body>
 </html>
