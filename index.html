@@ -3,8 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PitchKey - Done-for-You Airbnb Lead Generation</title>
+    <title>PitchKey - Verified Airbnb Leads for Property Managers</title>
+    <meta name="description" content="PitchKey finds and verifies Airbnb property addresses for UK property managers. Get 3 free addresses, no credit card needed. Done-for-you lead generation service.">
+    <meta name="keywords" content="Airbnb leads, property management, lead generation, UK property managers, STR management, vacation rental leads">
+    <meta name="author" content="PitchKey">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="PitchKey - Verified Airbnb Leads for Property Managers">
+    <meta property="og:description" content="Stop wasting time finding homeowners. We deliver verified Airbnb property addresses every month.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pitchkey.ai">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="PitchKey - Verified Airbnb Leads">
+    <meta name="twitter:description" content="Find verified Airbnb property addresses. Done-for-you lead generation for UK property managers.">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://pitchkey.ai">
+    
+    <!-- Robots -->
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "PitchKey",
+      "description": "Done-for-you Airbnb lead generation service for UK property managers",
+      "url": "https://pitchkey.ai",
+      "email": "contact@pitchkey.ai",
+      "areaServed": {
+        "@type": "GeoShape",
+        "name": "United Kingdom",
+        "addressCountry": "GB"
+      },
+      "priceRange": "£249-£599",
+      "serviceType": "Lead Generation",
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "GBP",
+        "lowPrice": "249",
+        "highPrice": "599",
+        "offerCount": "3"
+      }
+    }
+    </script>
     <style>
         * {
             margin: 0;
@@ -102,6 +147,8 @@
             cursor: pointer;
             transition: all 0.2s;
             font-family: 'Plus Jakarta Sans', sans-serif;
+            text-decoration: none;
+            display: inline-block;
         }
 
         .btn-primary-large {
@@ -456,6 +503,8 @@
             width: 100%;
             transition: all 0.2s;
             font-family: 'Plus Jakarta Sans', sans-serif;
+            text-decoration: none;
+            display: block;
         }
 
         .pricing-card.featured .plan-cta {
@@ -725,7 +774,7 @@
                         <div class="plan-feature">Email support</div>
                         <div class="plan-feature">Ready to mail</div>
                     </div>
-                    <button class="plan-cta" href="pitchkey_contact.html">Get Started</button>
+                    <a href="form.html" class="plan-cta">Get Started</a>
                 </div>
 
                 <div class="pricing-card featured">
@@ -739,7 +788,7 @@
                         <div class="plan-feature">Confidence scores</div>
                         <div class="plan-feature">Email & Slack support</div>
                     </div>
-                    <button class="plan-cta" href="pitchkey_contact.html">Get Started</button>
+                    <a href="form.html" class="plan-cta">Get Started</a>
                 </div>
 
                 <div class="pricing-card">
@@ -753,7 +802,7 @@
                         <div class="plan-feature">Property briefings</div>
                         <div class="plan-feature">Email support</div>
                     </div>
-                    <button class="plan-cta" href="pitchkey_contact.html">Talk to Us</button>
+                    <a href="contact.html" class="plan-cta">Talk to Us</a>
                 </div>
             </div>
         </div>
@@ -802,12 +851,11 @@
         </div>
     </div>
 
-    <!-- FREE TRIAL SECTION -->
     <div class="final-cta">
         <div class="final-cta-content">
             <h2 class="cta-title">Not Sure Yet? Try It Free</h2>
             <p class="cta-subtitle">Get 3 verified Airbnb addresses delivered within 24 hours. No credit card. No commitment. See exactly what you'll get on a paid plan.</p>
-            <button class="btn-large btn-primary-large" onclick="location.href='pitchkey_free_trial_form.html'">Get 3 Free Addresses</button>
+            <a href="form.html" class="btn-large btn-primary-large">Get 3 Free Addresses</a>
         </div>
     </div>
 
@@ -820,13 +868,10 @@
             const holidayHomeRevenue = parseFloat(document.getElementById('holidayHomeRevenue').value) || 25000;
             const commissionRate = parseFloat(document.getElementById('commissionRate').value) || 20;
             
-            // Calculate property manager's annual revenue from 1 property
             const pmAnnualRevenue = (holidayHomeRevenue * commissionRate) / 100;
             
-            // This is what they make per year from closing 1 homeowner
             document.getElementById('roiValue').textContent = '£' + pmAnnualRevenue.toLocaleString();
             
-            // Update the detail text with the breakdown
             document.getElementById('roiDetail').textContent = 'That\'s ' + commissionRate + '% of £' + holidayHomeRevenue.toLocaleString() + ' annual holiday home revenue. From just 1 property. Every year.';
         }
 
