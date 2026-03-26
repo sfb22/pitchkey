@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PitchKey - Verified Airbnb Leads for Property Managers</title>
+    <meta name="description" content="PitchKey finds and verifies Airbnb property addresses for UK property managers. Get 3 free addresses, no credit card needed. Done-for-you lead generation service.">
+    <meta name="keywords" content="Airbnb leads, property management, lead generation, UK property managers, STR management, vacation rental leads">
+    <meta name="author" content="PitchKey">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="PitchKey - Verified Airbnb Leads for Property Managers">
+    <meta property="og:description" content="Stop wasting time finding homeowners. We deliver verified Airbnb property addresses every month.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pitchkey.ai">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="PitchKey - Verified Airbnb Leads">
+    <meta name="twitter:description" content="Find verified Airbnb property addresses. Done-for-you lead generation for UK property managers.">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://pitchkey.ai">
+    
+    <!-- Robots -->
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "PitchKey",
+      "description": "Done-for-you Airbnb lead generation service for UK property managers",
+      "url": "https://pitchkey.ai",
+      "email": "contact@pitchkey.ai",
+      "areaServed": {
+        "@type": "GeoShape",
+        "name": "United Kingdom",
+        "addressCountry": "GB"
+      },
+      "priceRange": "£249-£599",
+      "serviceType": "Lead Generation",
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "GBP",
+        "lowPrice": "249",
+        "highPrice": "599",
+        "offerCount": "3"
+      }
+    }
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #fafbfc;
+            color: #1a202c;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background: white;
+            border-bottom: 1px solid #e2e8f0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-logo {
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-logo span {
+            color: #10b981;
+        }
+
+        .nav-cta {
+            padding: 10px 20px;
+            background: #10b981;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .nav-cta:hover {
+            background: #059669;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.65) 0%, rgba(30, 41, 59, 0.65) 100%), url('hero-bg.jpg') center/cover no-repeat;
+            color: white;
+            padding: 80px 40px;
+            text-align: center;
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.1;
+            letter-spacing: -1px;
+            max-width: 900px;
+        }
+
+        .hero-subtitle {
+            font-size: 20px;
+            color: #cbd5e1;
+            margin-bottom: 40px;
+            max-width: 700px;
+            line-height: 1.6;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-large {
+            padding: 16px 32px;
+            font-size: 15px;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary-large {
+            background: #10b981;
+            color: white;
+        }
+
+        .btn-primary-large:hover {
+            background: #059669;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(16, 185, 129, 0.3);
+        }
+
+        .btn-secondary-large {
+            background: white;
+            color: #0f172a;
+            border: 2px solid white;
+        }
+
+        .btn-secondary-large:hover {
+            background: transparent;
+            transform: translateY(-2px);
+        }
+
+        .problem {
+            background: white;
+            padding: 80px 40px;
+        }
+
+        .problem-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
+            color: #0f172a;
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            color: #64748b;
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+
+        .pain-points {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .pain-point {
+            background: #f8fafc;
+            padding: 24px;
+            border-radius: 8px;
+            border-left: 3px solid #ef4444;
+        }
+
+        .pain-point-icon {
+            font-size: 28px;
+            margin-bottom: 12px;
+        }
+
+        .pain-point-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 8px;
+        }
+
+        .pain-point-desc {
+            font-size: 13px;
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        .solution {
+            background: #f8fafc;
+            padding: 80px 40px;
+        }
+
+        .solution-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .solution-title {
+            text-align: center;
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 60px;
+            letter-spacing: -0.5px;
+            color: #0f172a;
+        }
+
+        .how-it-works {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+        }
+
+        .step {
+            background: white;
+            padding: 32px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            position: relative;
+        }
+
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: #10b981;
+            color: white;
+            border-radius: 50%;
+            font-weight: 800;
+            font-size: 18px;
+            margin-bottom: 16px;
+        }
+
+        .step-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 12px;
+        }
+
+        .step-desc {
+            font-size: 13px;
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        .roi-section {
+            background: white;
+            padding: 80px 40px;
+        }
+
+        .roi-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .roi-title {
+            text-align: center;
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
+            color: #0f172a;
+        }
+
+        .roi-subtitle {
+            text-align: center;
+            font-size: 16px;
+            color: #64748b;
+            margin-bottom: 60px;
+        }
+
+        .roi-calculator {
+            background: linear-gradient(135deg, #f0fdf4 0%, #f1f5f9 100%);
+            border: 2px solid #10b981;
+            border-radius: 12px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .roi-inputs {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .roi-input-group {
+            text-align: left;
+        }
+
+        .roi-label {
+            display: block;
+            font-size: 12px;
+            font-weight: 700;
+            color: #475569;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            letter-spacing: 0.3px;
+        }
+
+        .roi-input-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            font-size: 14px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .roi-result {
+            background: white;
+            padding: 32px;
+            border-radius: 8px;
+            margin-top: 24px;
+        }
+
+        .roi-result-label {
+            font-size: 13px;
+            font-weight: 600;
+            color: #64748b;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .roi-result-value {
+            font-size: 48px;
+            font-weight: 800;
+            color: #10b981;
+            margin-bottom: 8px;
+        }
+
+        .roi-result-detail {
+            font-size: 13px;
+            color: #64748b;
+        }
+
+        .pricing {
+            background: #f8fafc;
+            padding: 80px 40px;
+        }
+
+        .pricing-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .pricing-title {
+            text-align: center;
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
+            color: #0f172a;
+        }
+
+        .pricing-subtitle {
+            text-align: center;
+            font-size: 16px;
+            color: #64748b;
+            margin-bottom: 60px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+        }
+
+        .pricing-card {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 32px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .pricing-card:hover {
+            border-color: #10b981;
+            box-shadow: 0 8px 24px rgba(16, 185, 129, 0.1);
+            transform: translateY(-4px);
+        }
+
+        .pricing-card.featured {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            border-color: #10b981;
+            transform: scale(1.05);
+        }
+
+        .plan-name {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: inherit;
+        }
+
+        .plan-price {
+            font-size: 48px;
+            font-weight: 800;
+            margin: 20px 0;
+            color: #10b981;
+        }
+
+        .pricing-card.featured .plan-price {
+            color: #10b981;
+        }
+
+        .plan-description {
+            font-size: 13px;
+            color: #94a3b8;
+            margin-bottom: 24px;
+            line-height: 1.6;
+        }
+
+        .pricing-card.featured .plan-description {
+            color: #cbd5e1;
+        }
+
+        .plan-features {
+            text-align: left;
+            margin-bottom: 24px;
+            font-size: 13px;
+        }
+
+        .plan-feature {
+            padding: 8px 0;
+            border-bottom: 1px solid #e2e8f0;
+            color: #64748b;
+        }
+
+        .pricing-card.featured .plan-feature {
+            border-bottom-color: #334155;
+            color: #cbd5e1;
+        }
+
+        .plan-feature:before {
+            content: "✓ ";
+            color: #10b981;
+            font-weight: 700;
+            margin-right: 8px;
+        }
+
+        .plan-cta {
+            padding: 12px 24px;
+            background: #10b981;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 13px;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.2s;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            text-decoration: none;
+            display: block;
+        }
+
+        .pricing-card.featured .plan-cta {
+            background: #10b981;
+        }
+
+        .plan-cta:hover {
+            background: #059669;
+        }
+
+        .why-choose {
+            background: white;
+            padding: 80px 40px;
+        }
+
+        .why-choose-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .why-title {
+            text-align: center;
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 60px;
+            letter-spacing: -0.5px;
+            color: #0f172a;
+        }
+
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
+        }
+
+        .benefit {
+            text-align: center;
+        }
+
+        .benefit-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+
+        .benefit-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 12px;
+        }
+
+        .benefit-desc {
+            font-size: 13px;
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        .final-cta {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            padding: 80px 40px;
+            text-align: center;
+        }
+
+        .final-cta-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .cta-title {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+
+        .cta-subtitle {
+            font-size: 16px;
+            color: #cbd5e1;
+            margin-bottom: 32px;
+        }
+
+        footer {
+            background: #0f172a;
+            color: #cbd5e1;
+            padding: 40px;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 16px 20px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero-subtitle {
+                font-size: 16px;
+            }
+
+            .section-title,
+            .solution-title,
+            .roi-title,
+            .pricing-title,
+            .why-title,
+            .cta-title {
+                font-size: 28px;
+            }
+
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+
+            .roi-inputs {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1, .hero-subtitle, .hero-cta {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .hero-subtitle {
+            animation-delay: 0.1s;
+        }
+
+        .hero-cta {
+            animation-delay: 0.2s;
+        }
+
+        .step {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .step:nth-child(1) { animation-delay: 0.1s; }
+        .step:nth-child(2) { animation-delay: 0.2s; }
+        .step:nth-child(3) { animation-delay: 0.3s; }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-logo">Pitch<span>Key</span></div>
+        <button class="nav-cta" onclick="document.getElementById('pricing').scrollIntoView({behavior: 'smooth'})">Get Started</button>
+    </nav>
+
+    <div class="hero">
+        <h1>Find verified Airbnb properties. Stop wasting time searching.</h1>
+        <p class="hero-subtitle">We find verified Airbnb properties with real addresses every month. No more scrolling, no more guessing. You focus on closing deals and growing. We handle the grunt work.</p>
+        <div class="hero-cta">
+            <button class="btn-large btn-primary-large" onclick="document.getElementById('roi').scrollIntoView({behavior: 'smooth'})">See the ROI</button>
+            <button class="btn-large btn-secondary-large" onclick="document.getElementById('how-it-works').scrollIntoView({behavior: 'smooth'})">How it works</button>
+        </div>
+    </div>
+
+    <div class="problem">
+        <div class="problem-content">
+            <h2 class="section-title">The real challenge</h2>
+            <p class="section-subtitle">Growing your property management business means finding new homeowners to bring onto your roster. That's the game. But here's the thing — there's no good way to do it systematically. Most property managers spend hours every week just scrolling Airbnb, looking for properties that might be worth reaching out to. All manual work. And there's no platform or tool that does what needs to be done. So you're left praying for word of mouth, hoping someone refers you a property. That's where most growth stalls.</p>
+
+            <div class="pain-points">
+                <div class="pain-point">
+                    <div class="pain-point-icon">🔍</div>
+                    <div class="pain-point-title">The search never ends</div>
+                    <div class="pain-point-desc">Hours scrolling Airbnb. Looking for properties. Trying to figure out who might be worth contacting. There's no systematic way to find prospects. It's tedious, manual work that doesn't move the needle. And it burns you out.</div>
+                </div>
+
+                <div class="pain-point">
+                    <div class="pain-point-icon">📬</div>
+                    <div class="pain-point-title">No address = no outreach</div>
+                    <div class="pain-point-desc">You find a property on Airbnb but there's no full address. You know roughly where it is, but you can't mail anything. Your campaigns can't get started without real addresses.</div>
+                </div>
+
+                <div class="pain-point">
+                    <div class="pain-point-icon">📉</div>
+                    <div class="pain-point-title">Your growth stays slow</div>
+                    <div class="pain-point-desc">You need a steady pipeline of qualified properties coming in every month. Not when you finally get around to researching. Consistently. Every single month.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-content">
+            <h2 class="solution-title">How it works</h2>
+            <div class="how-it-works" id="how-it-works">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-title">Tell us what you're looking for</div>
+                    <div class="step-desc">Your region, property type, size, price point — whatever matters to you. Cottages in Devon? Holiday homes? Tell us exactly what you want to go after and we'll find them.</div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-title">We find and verify them</div>
+                    <div class="step-desc">We source Airbnb properties that match your criteria and verify every single address. You get properties ready to mail — no guesswork, no bad leads.</div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-title">You get the list</div>
+                    <div class="step-desc">A spreadsheet lands in your inbox. Property addresses. GPS. Confidence scores. Everything you need to launch your mail campaign immediately and start winning new homeowners.</div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-title">We do it again next month</div>
+                    <div class="step-desc">Fresh leads. Every month. Properties delist, we replace them. Your pipeline never runs dry. Growth stays consistent.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="roi-section" id="roi">
+        <div class="roi-content">
+            <h2 class="roi-title">What's this actually worth?</h2>
+            <p class="roi-subtitle">Real numbers. If you close just one property, here's what you make</p>
+
+            <div class="roi-calculator">
+                <div class="roi-inputs">
+                    <div class="roi-input-group">
+                        <label class="roi-label">Average holiday home revenue/year (£)</label>
+                        <input type="number" id="holidayHomeRevenue" value="25000" min="10000" max="100000" step="1000" onchange="calculateROI()">
+                    </div>
+                    <div class="roi-input-group">
+                        <label class="roi-label">Your commission (%) — typically 20%</label>
+                        <input type="number" id="commissionRate" value="20" min="5" max="50" step="1" onchange="calculateROI()">
+                    </div>
+                </div>
+
+                <div class="roi-result">
+                    <div class="roi-result-label">Close just 1 homeowner per month</div>
+                    <div class="roi-result-value" id="roiValue">£60,000</div>
+                    <div class="roi-result-detail" id="roiDetail">That's 20% of £25,000 annual holiday home revenue. From just 1 property. Every year.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pricing" id="pricing">
+        <div class="pricing-content">
+            <h2 class="pricing-title">Pricing</h2>
+            <p class="pricing-subtitle">Pick what works for you. No long-term contracts. Cancel anytime. Just the price for finding and verifying properties every month.</p>
+
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="plan-name">Starter</div>
+                    <div class="plan-price">£249</div>
+                    <div class="plan-description">per month</div>
+                    <div class="plan-features">
+                        <div class="plan-feature">20 verified addresses/month</div>
+                        <div class="plan-feature">Any property type</div>
+                        <div class="plan-feature">GPS + full address</div>
+                        <div class="plan-feature">Email support</div>
+                        <div class="plan-feature">Ready to mail</div>
+                    </div>
+                    <a href="form.html" class="plan-cta">Get started</a>
+                </div>
+
+                <div class="pricing-card featured">
+                    <div class="plan-name">Professional</div>
+                    <div class="plan-price">£449</div>
+                    <div class="plan-description">per month (most popular)</div>
+                    <div class="plan-features">
+                        <div class="plan-feature">35 verified addresses/month</div>
+                        <div class="plan-feature">Any property type</div>
+                        <div class="plan-feature">GPS + full address + postcode</div>
+                        <div class="plan-feature">Confidence scores</div>
+                        <div class="plan-feature">Email & Slack support</div>
+                    </div>
+                    <a href="form.html" class="plan-cta">Get started</a>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="plan-name">Enterprise</div>
+                    <div class="plan-price">Custom</div>
+                    <div class="plan-description">for 50+ per month</div>
+                    <div class="plan-features">
+                        <div class="plan-feature">50+ verified addresses/month</div>
+                        <div class="plan-feature">Custom regions</div>
+                        <div class="plan-feature">All data included</div>
+                        <div class="plan-feature">Property briefings</div>
+                        <div class="plan-feature">Email support</div>
+                    </div>
+                    <a href="contact.html" class="plan-cta">Talk to us</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="why-choose">
+        <div class="why-choose-content">
+            <h2 class="why-title">Why actually use PitchKey?</h2>
+            <div class="benefits">
+                <div class="benefit">
+                    <div class="benefit-icon">✓</div>
+                    <div class="benefit-title">Addresses that actually work</div>
+                    <div class="benefit-desc">Every property verified. Every address checked. No guessing. No bad mail. Ready to send.</div>
+                </div>
+
+                <div class="benefit">
+                    <div class="benefit-icon">⚡</div>
+                    <div class="benefit-title">Save your sanity</div>
+                    <div class="benefit-desc">Stop spending hours every week searching. We do it. You close deals. Simple.</div>
+                </div>
+
+                <div class="benefit">
+                    <div class="benefit-icon">🎯</div>
+                    <div class="benefit-title">Real properties, real opportunity</div>
+                    <div class="benefit-desc">You tell us what you want. We find exactly that. No filtering through junk.</div>
+                </div>
+
+                <div class="benefit">
+                    <div class="benefit-icon">🔄</div>
+                    <div class="benefit-title">Fresh every single month</div>
+                    <div class="benefit-desc">Consistent pipeline. Properties come and go on Airbnb. We keep up. You don't have to.</div>
+                </div>
+
+                <div class="benefit">
+                    <div class="benefit-icon">📊</div>
+                    <div class="benefit-title">Confidence scores</div>
+                    <div class="benefit-desc">We tell you how sure we are about each address. No surprises. You decide who to mail.</div>
+                </div>
+
+                <div class="benefit">
+                    <div class="benefit-icon">💬</div>
+                    <div class="benefit-title">We're here to help</div>
+                    <div class="benefit-desc">Email. Slack. Real people. Questions? Need something tweaked? We're around.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="final-cta">
+        <div class="final-cta-content">
+            <h2 class="cta-title">Not sure yet? Try it free</h2>
+            <p class="cta-subtitle">Get 3 verified Airbnb addresses delivered within 24 hours. No credit card. No commitment. See exactly what you'll get on a paid plan.</p>
+            <a href="form.html" class="btn-large btn-primary-large">Get 3 free addresses</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 PitchKey. We find Airbnb properties. You close homeowners. Simple.</p>
+    </footer>
+
+    <script>
+        function calculateROI() {
+            const holidayHomeRevenue = parseFloat(document.getElementById('holidayHomeRevenue').value) || 25000;
+            const commissionRate = parseFloat(document.getElementById('commissionRate').value) || 20;
+            
+            const pmAnnualRevenue = (holidayHomeRevenue * commissionRate) / 100;
+            
+            document.getElementById('roiValue').textContent = '£' + pmAnnualRevenue.toLocaleString();
+            
+            document.getElementById('roiDetail').textContent = 'That\'s ' + commissionRate + '% of £' + holidayHomeRevenue.toLocaleString() + ' annual holiday home revenue. From just 1 property. Every year.';
+        }
+
+        window.addEventListener('load', calculateROI);
+    </script>
+</body>
+</html>
